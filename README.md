@@ -1,6 +1,6 @@
 # coding-test-b
 
-#This project use vite-reac-ts template
+#This project use vite-react-ts template
 #Use Node 21.6.1
 #comands
 #npm install install dependecies
