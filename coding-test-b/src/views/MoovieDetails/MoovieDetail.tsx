@@ -3,8 +3,8 @@ import './styles.css'
 import useLogic from './useLogic'
 
 const MoovieDetail: React.FC = () => {
-  const { moovieData, isLoading, error } = useLogic()
-  console.log(moovieData, error, isLoading)
+  const { moovieData, isLoading } = useLogic()
+
   if (isLoading) return <div>Loading...</div>
 
   return (

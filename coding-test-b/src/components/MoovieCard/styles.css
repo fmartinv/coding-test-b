@@ -63,8 +63,13 @@
   padding-top: 4rem;
 }
 @media screen and (max-width: 768px) {
+  .containerMoovieCard {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .articleOverview {
     padding-top: 1em;
-    padding-left: 1rem;
+    padding-left: 3rem;
   }
 }
