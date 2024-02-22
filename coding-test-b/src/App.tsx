@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import MainLayout from './components/MainLayout/MainLayout'
-import { CONSTANTS } from './constants/constants'
-import MoovieList from './components/MoovieList/MoovieList'
 import MoovieDetail from './views/MoovieDetails/MoovieDetail'
 import useLogic from './useLogic'
+import Home from './views/Home/Home'
 
 function App() {
   const {
-    data: movieData,
     error: movieError,
-    loading: movieLoading
+    loading: movieLoading,
+    imageSource,
+    imageTvSource
   } = useLogic()
 
   if (movieLoading) return <div>Loading...</div>
@@ -17,24 +16,15 @@ function App() {
 
   return (
     <Router>
-      <MainLayout>
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <div>
-                {movieData && (
-                  <MoovieList
-                    data={movieData?.results}
-                    imgUrl={CONSTANTS.IMG_URL}
-                  />
-                )}
-              </div>
-            }
-          ></Route>
-          <Route path='/movie/:id' element={<MoovieDetail />}></Route>
-        </Routes>
-      </MainLayout>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <Home imageSource={imageSource} imageTvSource={imageTvSource} />
+          }
+        ></Route>
+        <Route path='/:type/:id' element={<MoovieDetail />}></Route>
+      </Routes>
     </Router>
   )
 }
