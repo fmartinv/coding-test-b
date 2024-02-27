@@ -9,9 +9,16 @@ const useLogic = () => {
   const detailUrl = `${CONSTANTS.DETAIL_URL}/${type}/${id}${CONSTANTS.QUERY_MOVIE_DETAIL}`
 
   const { data, error, loading } = useDataFetch<MovieDetail>(detailUrl)
+  const isMovie = type === 'movie'
 
-  const releaseDate = data?.release_date
+  const releaseDate = isMovie ? data?.release_date : data?.last_air_date
   const realeaseYear = releaseDate?.slice(0, 4)
+  const originalLanguage = data?.original_language.toUpperCase()
+  console.log(originalLanguage)
+
+  const seasons = data?.seasons
+
+  const airDate = seasons?.[0]?.air_date
 
   function toHoursAndMinutes(totalMinutes: number) {
     const hours = Math.floor(totalMinutes / 60)
@@ -23,17 +30,19 @@ const useLogic = () => {
   }
 
   const filmDuration = data ? toHoursAndMinutes(data?.runtime) : null
-  console.log('filmDuration', filmDuration)
 
   const genres = data?.genres
 
   return {
+    airDate,
     error: error,
     filmDuration,
     genres,
     isLoading: loading,
     moovieData: data,
-    realeaseYear
+    realeaseYear,
+    isMovie,
+    originalLanguage
   }
 }
 

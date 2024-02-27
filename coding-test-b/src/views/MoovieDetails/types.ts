@@ -22,6 +22,10 @@ interface ProductionCountry {
   name: string
 }
 
+interface TvSeason {
+  air_date: string
+}
+
 export interface MovieDetail {
   backdrop_path: string
   belongs_to_collection: Collection
@@ -45,4 +49,9 @@ export interface MovieDetail {
   title: string
   vote_average: number
   vote_count: number
+  name: string
+  first_air_date: string
+  type: string
+  seasons: TvSeason[]
+  last_air_date: string
 }
