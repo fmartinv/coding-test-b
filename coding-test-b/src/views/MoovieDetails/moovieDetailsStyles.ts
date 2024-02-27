@@ -90,11 +90,8 @@ export const OverviewParagraph = styled.p`
 `
 export const SvgContainer = styled.div`
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   z-index: 100;
-  width: 3rem;
-  @media (max-width: 768px) {
-    width: 2rem;
-  }
+  width: 2rem;
 `

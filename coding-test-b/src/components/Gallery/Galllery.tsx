@@ -1,13 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 
-import {
-  Container,
-  ImgItem,
-  ImgWrapper,
-  PopularityText,
-  Title
-} from './galleryStyles'
+import { Container, ImgItem, ImgWrapper, Title } from './galleryStyles'
 import 'swiper/css/bundle'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -35,7 +29,7 @@ export const Gallery: React.FC<GalleryProps> = ({ data, dataType }) => {
           type: 'progressbar'
         }}
         modules={[Navigation, Pagination]}
-        spaceBetween={20}
+        spaceBetween={10}
         slidesPerView={2}
         navigation
         scrollbar={{ draggable: true }}
@@ -53,7 +47,7 @@ export const Gallery: React.FC<GalleryProps> = ({ data, dataType }) => {
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 20
+            spaceBetween: 10
           }
         }}
       >
@@ -62,7 +56,6 @@ export const Gallery: React.FC<GalleryProps> = ({ data, dataType }) => {
             <Link to={`/${dataType}/${data.id}`}>
               <ImgWrapper>
                 <ImgItem src={data.original} alt={data.title} />
-                <PopularityText>{data.popularity}</PopularityText>
               </ImgWrapper>
               <Title>{data.title}</Title>
             </Link>

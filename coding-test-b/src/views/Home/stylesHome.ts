@@ -11,12 +11,15 @@ export const Container = styled.div<ContainerProps>`
   display: block;
   margin-bottom: ${props => (props.applyMargin ? '20rem' : '0')};
   padding: 0 4rem;
+  @media (max-width: 1024px) {
+    margin-bottom: ${props => (props.applyMargin ? '18rem' : '0')};
+  }
   @media (max-width: 768px) {
     padding: 0 1rem;
-    margin-bottom: ${props => (props.applyMargin ? '10rem' : '0')};
+    margin: ${props => (props.applyMargin ? '0 0 11rem 0' : '0')};
   }
-  @media (max-width: 460px) {
-    margin-bottom: ${props => (props.applyMargin ? '8rem' : '0')};
+  @media (max-width: 320px) {
+    margin: ${props => (props.applyMargin ? '0 0 8rem 0' : '0')};
   }
 `
 export const Header = styled.div`
