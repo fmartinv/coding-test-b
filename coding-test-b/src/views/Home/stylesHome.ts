@@ -6,8 +6,6 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   max-width: 100%;
-  min-height: 35vh;
-  max-height: 40vh;
   display: block;
   margin-bottom: ${props => (props.applyMargin ? '20rem' : '0')};
   padding: 0 4rem;
@@ -35,6 +33,4 @@ export const GaleryTitle = styled.h2`
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100dvh;
-  width: 100%;
 `

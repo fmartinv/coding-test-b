@@ -33,13 +33,10 @@ export const Gallery: React.FC<GalleryProps> = ({ data, dataType }) => {
         slidesPerView={2}
         navigation
         scrollbar={{ draggable: true }}
-        // onSwiper={swiper => console.log(swiper)}
-        // onSlideChange={() => console.log('slide change')}
         className='mySwiper'
         breakpoints={{
           640: {
-            slidesPerView: 2,
-            spaceBetween: 20
+            slidesPerView: 1
           },
           768: {
             slidesPerView: 4,

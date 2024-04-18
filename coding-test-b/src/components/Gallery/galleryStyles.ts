@@ -14,7 +14,7 @@ export const ImgWrapper = styled.div`
 export const ImgItem = styled.img`
   display: block;
   width: 100%;
-  height: 100%;
+  height: 33rem;
   object-fit: cover;
 `
 export const Title = styled.h5`

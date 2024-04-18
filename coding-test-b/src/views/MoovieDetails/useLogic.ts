@@ -14,7 +14,6 @@ const useLogic = () => {
   const releaseDate = isMovie ? data?.release_date : data?.last_air_date
   const realeaseYear = releaseDate?.slice(0, 4)
   const originalLanguage = data?.original_language.toUpperCase()
-  console.log(originalLanguage)
 
   const seasons = data?.seasons
 

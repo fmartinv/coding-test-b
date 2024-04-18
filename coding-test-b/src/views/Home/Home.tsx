@@ -18,7 +18,7 @@ const Home: FC<HomeProps> = ({ imageSource, imageTvSource }) => {
   return (
     <MainContainer>
       <Header />
-      <Container applyMargin>
+      <Container>
         <GaleryTitle>Popular Movies</GaleryTitle>
         <Gallery data={imageSource} dataType='movie' />
       </Container>
